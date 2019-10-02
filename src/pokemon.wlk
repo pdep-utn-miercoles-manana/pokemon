@@ -21,4 +21,8 @@ class Pokemon {
 	method velocidad() = caracteristicas.velocidad() + especie.velocidad()
 	method inteligencia() = caracteristicas.inteligencia() + especie.inteligencia()
 
+	/** Punto 3 **/
+	
+	method estaMaximizado() = caracteristicas.estaMaximizado()
+	
 }
