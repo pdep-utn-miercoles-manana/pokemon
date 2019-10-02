@@ -2,11 +2,14 @@ class Pokemon {
 	
 	var estado
 	var especie
+	var stamina
 	var caracteristicas
 	
 	/** Getters **/
 	
 	method estado() = estado
+	method stamina() = stamina
+	method especie() = especie
 	method caracteristicas() = caracteristicas
 	
 	/** Punto 1 **/
@@ -24,5 +27,5 @@ class Pokemon {
 	/** Punto 3 **/
 	
 	method estaMaximizado() = caracteristicas.estaMaximizado()
-	
+
 }
