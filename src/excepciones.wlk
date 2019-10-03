@@ -1,0 +1,1 @@
+class RutinaException inherits Exception {}
