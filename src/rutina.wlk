@@ -1,13 +1,16 @@
+import items.*
+
 class Rutina {
 	method puedeRealizarla(unPokemon) {
 		return self.staminaNecesaria() > unPokemon.stamina()
 	}
-	
+
 	method entrenarA(unPokemon) {
 		unPokemon.disminuirStamina(self.stamina())
+
 		self.entrenar(unPokemon)
 	}
-	
+
 	method stamina()
 	method staminaNecesaria()
 
@@ -41,9 +44,9 @@ class Surfear inherits Rutina {
 class Bucear inherits Surfear {
 	const property metros
 	override method kilometros() = metros / 1000
-	
+
 	override method puedeRealizarla(unPokemon) {
-		return super(unPokemon) && unPokemon.tieneItem("Snorkel") 
+		return super(unPokemon) && unPokemon.tieneItem(snorkel)
 	}
 	
 }

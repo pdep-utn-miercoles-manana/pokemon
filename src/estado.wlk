@@ -1,5 +1,8 @@
 class Estado {
 	method multiplicador() = 1
+
+	method revivir(unPokemon) {}
+	method curarConfusion(unPokemon) {}
 }
 
 object normal inherits Estado {
@@ -8,14 +11,22 @@ object normal inherits Estado {
 
 object knockout inherits Estado {
 	method puedeRealizar(unPokemon, unaRutina) = false
+
+	override method revivir(unPokemon) {
+		unPokemon.normalizate()
+	}
 }
 
 object confundido inherits Estado {
 	method puedeRealizar(unPokemon, unaRutina) = true
 
 	override method multiplicador() = -1
+
+	override method curarConfusion(unPokemon) {
+		unPokemon.normalizate()
+	}
 }
 
-object infectado inherits Estado {
+class Infectado inherits Estado {
 	method puedeRealizar(unPokemon, unaRutina) = false
 }

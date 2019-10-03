@@ -39,7 +39,7 @@ class Pokemon {
 
 	method realizar(unaRutina) {
 		self.validarRealizacion(unaRutina)
-		unaRutina.entrenar(self)
+		unaRutina.entrenarA(self, estado)
 	}
 
 	method validarRealizacion(unaRutina) {
@@ -54,6 +54,9 @@ class Pokemon {
 	
 	method tiene(unItem) = unItem.equals(equipo)
 	
+	method aumentarStamina(unaCantidad) {
+		stamina = stamina + unaCantidad
+	}
 	method aumentarTernura(unaCantidad) {
 		caracteristicas.aumentarTernura(estado.multiplicador() * unaCantidad)
 	}
@@ -73,5 +76,31 @@ class Pokemon {
 	method disminuirInteligencia(unaCantidad) {
 		caracteristicas.disminuirInteligencia(estado.multiplicador() * unaCantidad)
 	}
+	method disminuirStamina(unaCantidad) {
+		stamina = 0.max(stamina - unaCantidad)
+	}
 
+	/** Punto 7 **/
+
+	method equipar(unItem) {
+		equipo = unItem
+	}
+
+	/** Punto 8 **/
+
+	method usar(unItem) {
+		unItem.usateSobre(self)
+	}
+
+	method revivir() {
+		estado.revivir(self)
+	}
+
+	method curarConfusion() {
+		estado.curarConfusion()
+	}
+
+	method normalizate() {
+		estado = normal
+	}
 }
