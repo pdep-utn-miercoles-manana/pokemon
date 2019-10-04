@@ -39,5 +39,19 @@ describe "Gimnasio Pokémon" {
 	test "Punto 2 - Velocidad pokémon" {
 		assert.equals(120, pika.velocidad())
 	}
-
+	
+	test "Punto 3 - Un pokémon no está maximizado" {
+		assert.notThat(pika.estaMaximizado())
+	}
+	
+	test "Punto 3 - Un pokémon está maximizado" {
+		pika = new Pokemon(
+			especie = pikachu, 
+			stamina = 1000, 
+			nickname = "Pikachu", 
+			caracteristicas = new CaracteristicasFundamentales(ternura = 255, velocidad = 128, inteligencia = 127)
+		)
+		assert.notThat(pika.estaMaximizado())
+	}
+	
 }
