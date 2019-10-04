@@ -1,3 +1,4 @@
+import items.*
 import estado.*
 import excepciones.*
 
@@ -6,7 +7,7 @@ class Pokemon {
 	const property nickname
 		
 	var estado = normal
-	var equipo
+	var equipo = noItem
 	var especie
 	var stamina
 	var caracteristicas
@@ -39,7 +40,8 @@ class Pokemon {
 
 	method realizar(unaRutina) {
 		self.validarRealizacion(unaRutina)
-		unaRutina.entrenarA(self, estado)
+		unaRutina.entrenarA(self)
+		estado.entrenarA(self)
 	}
 
 	method validarRealizacion(unaRutina) {

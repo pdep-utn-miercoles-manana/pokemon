@@ -1,3 +1,7 @@
+object noItem {
+	method usateSobre(unPokemon) {}
+}
+
 object snorkel {
 	method usateSobre(unPokemon) {}
 }

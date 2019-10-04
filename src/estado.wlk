@@ -3,6 +3,7 @@ class Estado {
 
 	method revivir(unPokemon) {}
 	method curarConfusion(unPokemon) {}
+	method entrenarA(unPokemon) {}
 }
 
 object normal inherits Estado {
@@ -28,5 +29,13 @@ object confundido inherits Estado {
 }
 
 class Infectado inherits Estado {
+	var turnos = 5
 	method puedeRealizar(unPokemon, unaRutina) = false
+	
+	override method multiplicador() = 2
+	
+	override method entrenarA(unPokemon) {
+		turnos = turnos -1
+		if (turnos == 0) unPokemon.normalizate()
+	}
 }
