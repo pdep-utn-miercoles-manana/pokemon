@@ -2,7 +2,7 @@ import items.*
 
 class Rutina {
 	method puedeRealizarla(unPokemon) {
-		return self.staminaNecesaria() > unPokemon.stamina()
+		return self.staminaNecesaria() < unPokemon.stamina()
 	}
 
 	method entrenarA(unPokemon) {

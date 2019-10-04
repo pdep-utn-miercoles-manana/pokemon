@@ -1,0 +1,43 @@
+import caracteristicas.*
+import especie.*
+import estado.*
+import excepciones.*
+import items.*
+import pokemon.*
+import rutina.*
+
+describe "Gimnasio Pokémon" {
+
+	var pika
+	
+	fixture {
+		pika = new Pokemon(
+			especie = pikachu, 
+			stamina = 1000, 
+			nickname = "Pikachu", 
+			caracteristicas = new CaracteristicasFundamentales(ternura = 100, velocidad = 100, inteligencia = 100)
+		)
+	}
+
+	test "Punto 1 - Un pokémon puede ralizar una rutina" {
+		assert.that(pika.puedeRealizar(escalar))
+	}
+
+	test "Punto 1 - Un pokémon no puede ralizar una rutina" {
+		pika.knockeate()
+		assert.notThat(pika.puedeRealizar(escalar))
+	}
+
+	test "Punto 2 - Inteligencia pokémon" {
+		assert.equals(120, pika.inteligencia())
+	}
+
+	test "Punto 2 - Ternura pokémon" {
+		assert.equals(120, pika.ternura())
+	}
+
+	test "Punto 2 - Velocidad pokémon" {
+		assert.equals(120, pika.velocidad())
+	}
+
+}
